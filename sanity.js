@@ -1,7 +1,7 @@
-import { SanityClient } from "@sanity/client";
-import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
+import {createClient} from "@sanity/client";
+import ImageUrlBuilder from "@sanity/image-url";
 
-const client = SanityClient({
+const client = createClient({
     projectId: "dqkkun3d",
     dataset: "production",
     useCdn: true,
