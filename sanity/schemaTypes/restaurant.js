@@ -51,9 +51,9 @@ export default defineType({
     {
       name: "type",
       title: "Category",
-      validation: (Rule) => Rule.required(),
       type: "reference",
       to: [{type: "category"}],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "dishes",
