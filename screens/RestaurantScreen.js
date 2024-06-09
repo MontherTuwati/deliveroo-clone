@@ -4,6 +4,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { urlFor } from '../sanity';
 import { ArrowLeftIcon, StarIcon, ChevronRightIcon, MapPinIcon } from 'react-native-heroicons/solid';
 import { QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
+import DishRow from '../components/DishRow';
 
 
 const RestaurantScreen = () => {
@@ -77,6 +78,19 @@ const RestaurantScreen = () => {
             <Text className='px-4 pt-6 mb-3 font-bold text-xl'>
                 Menu
             </Text>
+
+            {/* Dish Rows*/}
+            {dishes.map(dish => (
+                <DishRow 
+                    key={dish._id}
+                    id={dish._id}
+                    name={dish.name}
+                    description={dish.short_description}
+                    price={dish.price}
+                    image={dish.image}
+                />
+            ))}
+
         </View>
     </ScrollView>
   )
