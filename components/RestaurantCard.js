@@ -36,12 +36,12 @@ const RestaurantCard = ({
             lat,
         })
     )}
-    className='bg-white mr-3 shadow'>
+    className='bg-white mr-3 shadow rounded-b-2xl'>
         <Image
             source={{
                 uri: urlFor(imgUrl).url(),
             }}
-            className='h-36 w-64 rounded-sm'
+            className='h-36 w-64 rounded-t-2xl'
         />
         <View className='px-3 pb-4'>
             <Text className='font-bold text-lg pt-2'>{title}</Text>

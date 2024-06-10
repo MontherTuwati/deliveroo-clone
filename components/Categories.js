@@ -8,7 +8,7 @@ const Categories = () => {
 
   useEffect(() => {
     sanityClient.fetch(`
-    *[_type == "category"]`).then(data => {
+      *[_type == "category"]`).then(data => {
       setCategories(data);
     });
   }, []);

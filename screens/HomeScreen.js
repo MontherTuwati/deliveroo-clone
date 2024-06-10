@@ -2,7 +2,7 @@ import { View, Text, Image, TextInput, ScrollView } from 'react-native'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { AdjustmentsVerticalIcon, ChevronDownIcon, MagnifyingGlassIcon, UserIcon } from 'react-native-heroicons/outline';
+import { AdjustmentsVerticalIcon, ChevronDownIcon, MagnifyingGlassIcon, UserIcon, MapPinIcon } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 import sanityClient from '../sanity';
@@ -55,14 +55,26 @@ const HomeScreen = () => {
         
         {/*Search Bar*/}
         <View className="flex-row items-center space-x-2 pb-2 mx-4">
-          <View className="flex-row items-center space-x-2 flex-1 bg-gray-200 p-3">
-            <MagnifyingGlassIcon color='gray' size={20}/>
+          <View className="flex-row rounded-full border items-center space-x-2 flex-1 border-gray-400 p-3">
+            <MagnifyingGlassIcon color='gray' size={25}/>
             <TextInput
               placeholder="Restaurants and cuisines" 
-              keyboardType="default"
+              keyboardType='default'
+              className='ml-2 flex-1'
             />
+            <View className='relative flex-row'>
+              <View className='flex-row items-center space-x-2 border-0 border-l-2 pl-2 border-gray-300'>
+                <MapPinIcon size={20} color='#00CCBB'/>
+                <Text className='text-gray-400'>Nearby</Text>
+              </View>
+            </View>
+            
           </View>
-          <AdjustmentsVerticalIcon color='#00CCBB'/>
+          
+          <View className='p-2 bg-green-500 rounded-full'>
+            <AdjustmentsVerticalIcon color='white'/>
+          </View>
+          
         </View>
 
         {/*Body*/}

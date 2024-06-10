@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { urlFor } from '../sanity';
 import { ArrowLeftIcon, StarIcon, ChevronRightIcon, MapPinIcon } from 'react-native-heroicons/solid';
-import { QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
+import { HeartIcon, QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
 import DishRow from '../components/DishRow';
 
 
@@ -33,20 +33,23 @@ const RestaurantScreen = () => {
 
   return (
     <ScrollView>
-        <View className='relative'>
+        <View className='relative '>
             <Image 
                 source={{
                     uri: urlFor(imgUrl).url(),
                 }}
-                className='w-full h-56 bg-gray-300 p-4'
+                className='w-full h-72 bg-gray-300 p-2'
             />
             <TouchableOpacity onPress={navigation.goBack} className='absolute top-14 left-5 p-2 bg-gray-100 rounded-full'>
                 <ArrowLeftIcon size={20} color='#00CCBB' />
             </TouchableOpacity>
+            <TouchableOpacity onPress={{}} className='absolute top-14 right-5 p-2 bg-gray-100 rounded-full'>
+                <HeartIcon size={20} color='#00CCBB' />
+            </TouchableOpacity>
         </View>
 
-        <View className='bg-white'>
-            <View className='px-4 pt-4'>
+        <View className='bg-white -mt-12'  style={{borderTopLeftRadius: 40, borderTopRightRadius:40}} >
+            <View className='px-5 pt-4'>
                 <Text className='text-3xl font-bold'>{title}</Text>
                 <View className='flex-row space-x-2 my-1'>
                     <View className='flex-row items-center space-x-1'>
@@ -57,7 +60,7 @@ const RestaurantScreen = () => {
                     </View>
 
                     <View className='flex-row items-center space-x-1'>
-                        <MapPinIcon color='gray' opacity={0.4} size={22}/>
+                        <MapPinIcon color='green' opacity={0.4} size={22}/>
                         <Text className='text-xs text-gray-500'>Nearby . {address}</Text>
                     </View>
                 </View>
@@ -65,9 +68,9 @@ const RestaurantScreen = () => {
                 <Text className='text-gray-500 mt-2 pb-4'>{short_description}</Text>
             </View>
 
-            <TouchableOpacity className='flex-row items-center pace-x-2 p-4 border-y broder-gray-300'>
-                <QuestionMarkCircleIcon color='gray' opacity={0.6} size={20}/>
-                <Text className='pl-2 flex-1 text-md font-bold'>
+            <TouchableOpacity className='flex-row items-center pace-x-2 p-4 border-y border-gray-300'>
+                <QuestionMarkCircleIcon color='green' opacity={0.6} size={20}/>
+                <Text className='pl-2 flex-1 text-md text-green-500 font-bold'>
                     Have a food allergy?
                 </Text>
                 <ChevronRightIcon color='#00CCBB'/>
@@ -93,6 +96,7 @@ const RestaurantScreen = () => {
 
         </View>
     </ScrollView>
+
   )
 }
 

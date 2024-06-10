@@ -11,7 +11,7 @@ const DishRow = ({id, name, description, price, image}) => {
     <>
     <TouchableOpacity 
         onPress={() => setIsPressed(!isPressed)} 
-        className={`bg-white border p-4 border-gray-200 
+        className={`flex-row items-center bg-white border p-3 border-gray-200 rounded-2xl mx-1 mb-3 shadow-2xl
         ${isPressed && 'border-b-0'}`}
     >
         <View className='flex-row'>
@@ -27,7 +27,7 @@ const DishRow = ({id, name, description, price, image}) => {
                         borderColor: '#F3F3F4',
                     }}
                     source={{uri: urlFor(image).url()}}
-                    className='h-20 w-20 bg-gray-300 p-4'
+                    className='h-20 w-20 bg-gray-300 p-4 rounded-xl'
                 />
             </View>
         </View>
