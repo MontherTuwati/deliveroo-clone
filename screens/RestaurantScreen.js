@@ -5,6 +5,7 @@ import { urlFor } from '../sanity';
 import { ArrowLeftIcon, StarIcon, ChevronRightIcon, MapPinIcon, HeartIcon as HeartIconSolid, } from 'react-native-heroicons/solid';
 import { HeartIcon, QuestionMarkCircleIcon } from 'react-native-heroicons/outline';
 import DishRow from '../components/DishRow';
+import CartIcon from '../components/CartIcon';
 
 
 const RestaurantScreen = () => {
@@ -33,6 +34,9 @@ const RestaurantScreen = () => {
     }, []);
 
   return (
+    <>
+    <CartIcon/>
+
     <ScrollView>
         <View className='relative '>
             <Image 
@@ -78,7 +82,7 @@ const RestaurantScreen = () => {
             </TouchableOpacity>
         </View>
 
-        <View>
+        <View className='pb-36'>
             <Text className='px-4 pt-6 mb-3 font-bold text-xl'>
                 Menu
             </Text>
@@ -97,6 +101,7 @@ const RestaurantScreen = () => {
 
         </View>
     </ScrollView>
+    </>
 
   )
 }
