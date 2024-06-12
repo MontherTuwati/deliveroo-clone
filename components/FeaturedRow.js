@@ -1,7 +1,7 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { ArrowRightIcon } from 'react-native-heroicons/solid'
-import RestaurantCard from './RestaurantCard'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ArrowRightIcon } from 'react-native-heroicons/solid';
+import RestaurantCard from './RestaurantCard';
 import sanityClient from '../sanity';
 
 const FeaturedRow = ({id, title, description}) => {
@@ -25,15 +25,14 @@ const FeaturedRow = ({id, title, description}) => {
 
   return (
     <View>
-        <View className='mt-4 flex-row items-center justify-between px-4 '>
-            <Text className='font-bold text-lg'>{title}</Text>
-            <TouchableOpacity>
-              <ArrowRightIcon color='#00CCBB' stroke='#00CCBB'/>
-            </TouchableOpacity>
-        </View>
-
-        <Text className='text-xs text-gray-500 px-4'>{description}</Text>
-
+      <TouchableOpacity>
+          <View className='mt-4 flex-row items-center justify-between px-4 '> 
+              <Text className='font-bold text-lg'>{title}</Text>
+              <ArrowRightIcon color='#00CCBB' stroke='#00CCBB'/>    
+          </View>
+          <Text className='text-xs text-gray-500 px-4'>{description}</Text>
+        </TouchableOpacity>
+        
         <ScrollView
             horizontal
             contentContainerStyle={{
