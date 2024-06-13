@@ -1,8 +1,8 @@
-import { View, Text, Image, TextInput, ScrollView } from 'react-native'
+import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { AdjustmentsVerticalIcon, ChevronDownIcon, MagnifyingGlassIcon, UserIcon, MapPinIcon } from 'react-native-heroicons/outline';
+import { AdjustmentsVerticalIcon, ChevronDownIcon, MagnifyingGlassIcon, UserCircleIcon, MapPinIcon } from 'react-native-heroicons/outline';
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 import sanityClient from '../sanity';
@@ -49,8 +49,9 @@ const HomeScreen = () => {
                   <ChevronDownIcon size={20} color="#00CCBB"/>
                 </Text>
             </View>
-
-            <UserIcon size={35} color="#00CCBB"/>
+            <TouchableOpacity>
+              <UserCircleIcon size={40} color="#00CCBB"/>
+            </TouchableOpacity>
         </View>
         
         {/*Search Bar*/}
