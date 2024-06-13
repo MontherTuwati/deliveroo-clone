@@ -8,7 +8,6 @@ import { ShoppingCartIcon } from 'react-native-heroicons/solid'
 const CartIcon = () => {
     const items = useSelector(selectCartItems);
     const navigation = useNavigation();
-    const cartTotal = useSelector(selectCartTotal)
 
     if (items.length === 0) return null;
 

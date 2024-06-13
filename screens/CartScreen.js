@@ -6,6 +6,7 @@ import { removeFromCart, selectCartItems, selectCartTotal } from '../features/ca
 import { useDispatch, useSelector } from 'react-redux';
 import { XCircleIcon } from 'react-native-heroicons/solid';
 import { urlFor } from '../sanity';
+import { TrashIcon } from 'react-native-heroicons/outline';
 
 const CartScreen = () => {
     const navigation = useNavigation();
@@ -40,21 +41,20 @@ const CartScreen = () => {
                     </TouchableOpacity>
                 </View>
 
-                <View className='flex-row items-center space-x-4 px-4 py-3 bg-white my-5'>
-                    <Image source={{
-                        uri: 'https://links.papareact.com/wru'
-                        }} 
-                        className='h-7 w-7 bg-gray-300 p-4 rounded-full'
+                <View className='flex-row items-center space-x-4 px-4 py-4 bg-[#c5fffa]'>
+                    <Image 
+                        source={require('../assets/deliveroo-delivery.png')} 
+                        className='h-10 w-10 px-8 py-8 rounded-full'
                         />
-                        <Text className='flex-1'>Deliver in 30-45 minutes</Text>
+                        <Text className='flex-1 pl-4'>Deliver in 30-45 minutes</Text>
                         <TouchableOpacity>
-                            <Text className='text-[#00CCBB]'>Change</Text>
+                            <Text className='text-[#00CCBB] font-bold'>Change</Text>
                         </TouchableOpacity>
                 </View>
 
-                <ScrollView className='divide-y divide-gray-200'>
+                <ScrollView className='divide-y divide-gray-200 my-2'>
                     {Object.entries(groupedItemsInCart).map(([key, items]) => (
-                        <View key={key} className='flex-row items-center space-x-3 bg-white py-2 px-5'>
+                        <View key={key} className='flex-row items-center space-x-3 bg-white py-3 px-5 shadow-2xl'>
                             <Text className='text-[#00CCBB]'>{items.length} x</Text>
                             <Image
                                 source={{uri: urlFor(items[0]?.image).url()}}
@@ -63,24 +63,22 @@ const CartScreen = () => {
                             <Text className='flex-1'>{items[0]?.name}</Text>
                             <Text className='text-gray-600'>${items[0]?.price}</Text>
 
-                            <TouchableOpacity>
-                                <Text onPress={() => dispatch(removeFromCart({id: key}))} className='text-[#00CCBB] text-xs'>
-                                    Remove
-                                </Text>
+                            <TouchableOpacity className='bg-gray-100 items-center p-2 rounded-full'>
+                                <TrashIcon onPress={() => dispatch(removeFromCart({id: key}))} color='#00CCBB' />
                             </TouchableOpacity>
                         </View>
                     ))}
                 </ScrollView>
 
-                <View className='p-5 bg-white space-y-4'>
+                <View className='p-5 bg-[#c5fffa] space-y-4 rounded-t-3xl'>
                     <View className='flex-row justify-between'>
-                        <Text className='text-gray-400'>Subtotal</Text>
-                        <Text className='text-gray-400'>${cartTotal}</Text>
+                        <Text className='text-gray-700'>Subtotal</Text>
+                        <Text className='text-gray-700'>${cartTotal}</Text>
                     </View>
 
                     <View className='flex-row justify-between'>
-                        <Text className='text-gray-400'>Deilvery Free</Text>
-                        <Text className='text-gray-400'>${5.99}</Text>
+                        <Text className='text-gray-700'>Deilvery Free</Text>
+                        <Text className='text-gray-700'>${5.99}</Text>
                     </View>
 
                     <View className='flex-row justify-between'>
@@ -90,7 +88,7 @@ const CartScreen = () => {
 
                     <TouchableOpacity 
                     onPress={() => navigation.navigate('PreparingOrderScreen')}
-                    className='rounded-lg bg-[#00CCBB] p-4'>
+                    className='bg-[#00CCBB] p-4 rounded-full'>
                         <Text className='text-center text-white text-lg font-bold'>Place Order</Text>
                     </TouchableOpacity>
                 </View>

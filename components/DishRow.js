@@ -5,6 +5,7 @@ import { MinusCircleIcon, PlusCircleIcon } from 'react-native-heroicons/solid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, selectCartItemsWithId, } from '../features/cartSlice';
 
+
 const DishRow = ({id, name, description, price, image}) => {
 
     const[isPressed, setIsPressed] = useState(false);
@@ -26,7 +27,7 @@ const DishRow = ({id, name, description, price, image}) => {
     <TouchableOpacity 
         onPress={() => setIsPressed(!isPressed)} 
         className={`flex-row items-center bg-white border p-3 border-gray-200 rounded-2xl mx-1 mb-3 shadow-2xl
-        ${isPressed && 'border-b-0'}`}
+        ${isPressed && "border-b-0 rounded-b-none"}`}
     >
         <View className='flex-row'>
             <View className='flex-1 pr-2'>
@@ -45,9 +46,10 @@ const DishRow = ({id, name, description, price, image}) => {
                 />
             </View>
         </View>
+        
     </TouchableOpacity>
     {isPressed && (
-        <View className='bg-whte px-4'>
+        <View className='bg-white border border-gray-200 border-t-0 px-4 rounded-b-2xl mx-1 mb-3 -mt-3 shadow-2xl'>
             <View className='flex-row items-center space-x-2 pb-3'>
                 <TouchableOpacity 
                 disabled={!items.length}

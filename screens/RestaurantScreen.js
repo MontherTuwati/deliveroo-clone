@@ -54,8 +54,8 @@ const RestaurantScreen = () => {
   return (
     <>
     <CartIcon/>
-
-    <ScrollView>
+    
+    <ScrollView> 
         <View className='relative '>
             <Image 
                 source={{
