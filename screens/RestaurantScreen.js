@@ -100,7 +100,7 @@ const RestaurantScreen = () => {
             </TouchableOpacity>
         </View>
 
-        <View className='pb-36'>
+        <View >
             <Text className='px-4 pt-6 mb-3 font-bold text-xl'>
                 Menu
             </Text>
@@ -117,6 +117,11 @@ const RestaurantScreen = () => {
                 />
             ))}
 
+        </View>
+        <View className='bg-white px-4 py-4 rounded-t-3xl'>
+            <Text className='p-2 font-bold text-lg'>Legal</Text>
+            <Text className='p-2'>Prices on this menu are set directly by the Restaurant.</Text>
+            <Text className='px-2 py-1'>Item prices may differ on Delivery and Pickup.</Text>
         </View>
     </ScrollView>
     </>

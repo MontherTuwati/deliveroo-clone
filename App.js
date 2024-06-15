@@ -12,6 +12,7 @@ import CartScreen from './screens/CartScreen';
 import PreparingOrderScreen from './screens/PreparingOrderScreen';
 import DeliveryScreen from './screens/DeliveryScreen';
 
+
 const Stack = createNativeStackNavigator();
 
 NativeWindStyleSheet.setOutput({
