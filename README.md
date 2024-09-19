@@ -60,11 +60,13 @@ Install dependencies
 ![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ```
-npm install tailwindcss-react-native
-npm install --save-dev tailwindcss
+npm install nativewind
+npm install --save-dev tailwindcss@3.3.2
 ```
 
-Tailwindcss requires a `tailwind.config.js` file with the content section configured to include the paths to all of your components and any other source files that contain Tailwind class names.
+Run npx tailwindcss init to create a `tailwind.config.js` file
+
+Add the paths to all of your component files in your `tailwind.config.js` file. Remember to replace `<custom directory>` with the actual name of your directory e.g. screens.
 
 ```
 // tailwind.config.js
@@ -78,23 +80,28 @@ module.exports = {
 };
 ```
 
-Add `TailwindProvider` at the top level of your application. The `TailwindProvider` creates the context for reactive styles and the atomic style objects.
+Add `NativeWindStyleSheet` at the top level of your application. The `NativeWindStyleSheet` creates the context for reactive styles and the atomic style objects.
 
 ```
-import { TailwindProvider } from "tailwindcss-react-native";
+import { NativeWindStyleSheet } from "nativewind";
 
-function MyAppsProviders({ children }) {
-  return <TailwindProvider>{children}</TailwindProvider>;
-}
+NativeWindStyleSheet.setOutput({
+  default: "native",
+});
 ```
 
 ##### Configure your babel.config.js
 
 ```
 // babel.config.js
-module.exports = {
-  plugins: ["tailwindcss-react-native/babel"],
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: ["babel-preset-expo"],
++   plugins: ["nativewind/babel"],
+  };
 };
+
 ```
 
 Install dependencies
