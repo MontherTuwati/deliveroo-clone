@@ -4,10 +4,10 @@
     "slug": "deliveroo-clone",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon-green-white.png",
+    "icon": "./assets/deliveroo-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/green-splash-tp.png",
+      "image": "./assets/deliveroo-splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
