@@ -13,12 +13,12 @@
 ### Screenshots & video 🌃
 
 <div style="display: flex; flex-wrap: wrap">
-<img width="49%" src="./github-images/1.png" alt="ng-ha" />
-<img width="49%" src="./github-images/2.png" alt="ng-ha" />
-<img width="49%" src="./github-images/3.png" alt="ng-ha" />
-<img width="49%" src="./github-images/4.png" alt="ng-ha" />
-<img width="49%" src="./github-images/5.png" alt="ng-ha" />
-<img width="49%" src="./github-images/6.png" alt="ng-ha" />
+<img width="49%" src="./assets/screenshots/1.png" alt="ng-ha" /> 
+<img width="49%" src="./assets/screenshots/2.png" alt="ng-ha" />
+<img width="49%" src="./assets/screenshots/3.png" alt="ng-ha" />
+<img width="49%" src="./assets/screenshots/4.png" alt="ng-ha" />
+<img width="49%" src="./assets/screenshots/5.png" alt="ng-ha" />
+<img width="49%" src="./assets/screenshots/6.png" alt="ng-ha" />
 </div>
 
 
