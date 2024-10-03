@@ -1,4 +1,4 @@
-# Deliveroo Clone with `REACT NATIVE!` (Navigation, Redux, Tailwind CSS & Sanity.io) :motor_scooter:
+# Food Delivery App with `REACT NATIVE!` (Navigation, Redux, Tailwind CSS & Sanity.io) :motor_scooter:
 
 ### Technologies
 
@@ -13,11 +13,9 @@
 ### Screenshots & video 🌃
 
 <div style="display: flex; flex-wrap: wrap">
-<img width="49%" src="./assets/screenshots/1.png"/>
 <img width="49%" src="./assets/screenshots/2.png"/>
 <img width="49%" src="./assets/screenshots/3.png"/>
 <img width="49%" src="./assets/screenshots/4.png"/>
-<img width="49%" src="./assets/screenshots/5.png"/>
 <img width="49%" src="./assets/screenshots/6.png"/>
 </div>
 
@@ -106,7 +104,7 @@ module.exports = function (api) {
 
 Install dependencies
 
-<a href="https://github.com/MontherTuwati/Deliveroo-Clone/blob/main/package.json" target="_blank">🔶 Dependency Info</a>
+<a href="https://github.com/MontherTuwati/food-delivery-app/blob/main/package.json" target="_blank">🔶 Dependency Info</a>
 
 <!-- Run Locally -->
 
@@ -117,7 +115,7 @@ Install dependencies
 Clone the project
 
 ```bash
-  git clone https://github.com/MontherTuwati/deliveroo-clone.git
+  git clone https://github.com/MontherTuwati/food-delivery-app.git
 ```
 
 change directory
